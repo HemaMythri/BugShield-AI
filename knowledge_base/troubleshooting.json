@@ -1,0 +1,82 @@
+[
+  {
+    "title": "Python dependency missing",
+    "source": "BugShield curated demo knowledge",
+    "symptoms": "ModuleNotFoundError No module named ImportError package missing module cannot import package pip dependency virtual environment",
+    "cause": "The required package may not be installed in the Python environment running the application, the import name may differ from the distribution name, or the intended virtual environment may not be active.",
+    "fix": "Check which Python executable runs the program; activate the intended virtual environment; install the package using python -m pip install package-name; verify the import name and requirements file; restart the application. Avoid installing packages blindly into a global environment.",
+    "tags": "python pip venv requirements"
+  },
+  {
+    "title": "Python indentation error",
+    "source": "BugShield curated demo knowledge",
+    "symptoms": "IndentationError expected an indented block unexpected indent mixed tabs spaces if for while def class",
+    "cause": "Python uses indentation to define code blocks. A block may be empty or its indentation may be inconsistent.",
+    "fix": "Inspect the line named in the traceback and the preceding block opener; indent the block consistently, preferably using four spaces; check for mixed tabs and spaces; run a syntax check before rerunning.",
+    "tags": "python syntax indentation"
+  },
+  {
+    "title": "Java NullPointerException",
+    "source": "BugShield curated demo knowledge",
+    "symptoms": "java.lang.NullPointerException object is null dereference method call field access",
+    "cause": "Code attempted to access a method or field through a null reference. The stack trace points to the location of the access, not necessarily where the value first became null.",
+    "fix": "Inspect the exact stack-trace line; identify the receiver of the failing call; trace where it is assigned; validate input and object lifecycle; use a clear guard or correct initialization where appropriate. Avoid adding a broad catch that hides the cause.",
+    "tags": "java null pointer exception"
+  },
+  {
+    "title": "API key or authentication error",
+    "source": "BugShield curated demo knowledge",
+    "symptoms": "HTTP 401 Unauthorized invalid API key authentication failed token missing API provider",
+    "cause": "The credential may be invalid, revoked, copied incorrectly, or not being read from the expected environment/configuration. Some services also use different credentials for different environments.",
+    "fix": "Check the provider dashboard and exact environment variable or secret setting; rotate exposed keys; remove whitespace; confirm the key has not been revoked and the account has access. Never print or commit the key while debugging.",
+    "tags": "api key 401 security credentials"
+  },
+  {
+    "title": "SQL relation or table not found",
+    "source": "BugShield curated demo knowledge",
+    "symptoms": "SQLSTATE relation does not exist table not found unknown table invalid object schema database",
+    "cause": "The table name may be misspelled, the query may use the wrong schema/database, migrations may not have run, or identifier casing may differ by database.",
+    "fix": "Confirm the active database and schema; inspect table names; check migrations and permissions; qualify the table with its schema when appropriate; test with a minimal SELECT. Do not modify or drop production tables to experiment.",
+    "tags": "sql database schema table"
+  },
+  {
+    "title": "Python index out of range",
+    "source": "BugShield curated demo knowledge",
+    "symptoms": "IndexError list index out of range list index sequence array empty list",
+    "cause": "Code accessed a sequence index that does not exist, often because the collection is empty, a loop boundary is incorrect, or an index is calculated from the wrong length.",
+    "fix": "Inspect the collection length immediately before access; check empty-input handling; review range bounds and off-by-one conditions; prefer iteration over manual indexing when appropriate; add tests for empty and one-element inputs.",
+    "tags": "python list index runtime"
+  },
+  {
+    "title": "Python indentation error alternative checks",
+    "source": "BugShield curated demo knowledge",
+    "symptoms": "SyntaxError invalid syntax unexpected token expected colon missing parenthesis python parser",
+    "cause": "The parser encountered malformed syntax such as a missing colon, bracket, quote, or operator, possibly on the previous line.",
+    "fix": "Read the full traceback and inspect the reported line plus the line above it; match brackets and quotes; check colons after compound statements; run python -m py_compile your_file.py.",
+    "tags": "python syntax parser"
+  },
+  {
+    "title": "Connection timeout or refused",
+    "source": "BugShield curated demo knowledge",
+    "symptoms": "ConnectionError timeout connection refused server unreachable DNS network port",
+    "cause": "The target service may be down, the hostname or port may be incorrect, a firewall may block traffic, or the client timeout may be too short for the operation.",
+    "fix": "Verify the hostname and port; confirm the service is running; test connectivity in a safe environment; inspect service logs; distinguish DNS, refused connection, and timeout errors. Avoid disabling security controls as a first response.",
+    "tags": "network timeout connectivity"
+  },
+  {
+    "title": "Java cannot find symbol",
+    "source": "BugShield curated demo knowledge",
+    "symptoms": "cannot find symbol Java compile error method variable class unresolved symbol",
+    "cause": "A variable, method, or class may be misspelled, out of scope, missing an import, or absent from the configured dependency/classpath.",
+    "fix": "Read the compiler's symbol and location; check spelling and capitalization; confirm declaration and scope; add the correct import or dependency if appropriate; rebuild after checking the project's build configuration.",
+    "tags": "java compiler symbol classpath"
+  },
+  {
+    "title": "Python type mismatch",
+    "source": "BugShield curated demo knowledge",
+    "symptoms": "TypeError unsupported operand type can only concatenate str not int object is not callable",
+    "cause": "An operation received a value of an unexpected type, or a variable name may have overwritten a function or built-in.",
+    "fix": "Inspect the full error and operand types near the failing line; validate external inputs; convert values explicitly only when semantically correct; check for names that shadow functions; add a minimal regression test.",
+    "tags": "python typeerror types"
+  }
+]
